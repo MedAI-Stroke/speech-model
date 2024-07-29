@@ -29,8 +29,7 @@ def display_waveform(audio:AudioObject):
     # Display waveform using parselmouth
     plt.subplot(2, 1, 2)
     plt.title("Waveform using parselmouth")
-    times = np.linspace(0, audio.snd.get_total_duration(), len(audio.snd.values.T[0]))
-    plt.plot(times, audio.snd.values.T)
+    plt.plot(audio.snd.xs(), audio.snd.values.T)
     plt.xlabel("Time (s)")
     plt.ylabel("Amplitude")
 

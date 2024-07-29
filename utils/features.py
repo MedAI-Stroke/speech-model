@@ -22,9 +22,8 @@ def get_statistics(array):
 def extract_energy(audio:AudioObject) -> np.float32:
     return np.sum(audio.y**2)
 
-def extract_mfcc(audio:AudioObject) -> np.ndarray:
-    return librosa.feature.mfcc(**audio.as_dict())
-
+def extract_mfcc(audio) -> np.ndarray:
+    return librosa.feature.mfcc(y=audio.y, sr=audio.sr)
 
 
 def extract_f0(audio:AudioObject, 

@@ -5,7 +5,7 @@ import librosa
 from librosa import display
 
 import parselmouth
-from IPython.display import Audio as IPyAudio
+from IPython.display import Audio
 
 from .object import AudioObject
     
@@ -36,14 +36,15 @@ def display_waveform(audio:AudioObject):
     plt.tight_layout()
     plt.show()
 
-def play_audio(audio:AudioObject):
-    print("Playing audio using librosa:")
-    display(IPyAudio(data=audio.y, rate=audio.sr))
-    
-    # Convert parselmouth.Sound to numpy array for playback
-    snd_array = audio.snd.values.T.flatten()
-    print("Playing audio using parselmouth:")
-    display(IPyAudio(data=snd_array, rate=int(audio.snd.sampling_frequency)))
+def play_audio(audio, from_librosa=True):
+    if from_librosa:
+      print("Playing audio using librosa:")
+      return Audio(data=audio.y, rate=audio.sr)
+    else:    
+      # Convert parselmouth.Sound to numpy array for playback
+      snd_array = audio.snd.values.T.flatten()
+      print("Playing audio using parselmouth:")
+      return Audio(data=snd_array, rate=int(audio.snd.sampling_frequency))
 
 def audio_strip(audio:AudioObject):
     y_stripped, idx = librosa.effects.trim(audio.y)

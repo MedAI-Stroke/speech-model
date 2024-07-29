@@ -16,7 +16,7 @@ def load_audio(file_path, sampling_rate = 16000):
         snd = snd.resample(sampling_rate)
     return AudioObject(y, sr, snd)
 
-def display_wavefrom(audio:AudioObject):
+def display_waveform(audio:AudioObject):
     plt.figure(figsize=(15, 6))
 
     # Display waveform using librosa

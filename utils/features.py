@@ -27,8 +27,8 @@ def extract_mfcc(audio) -> np.ndarray:
 
 
 def extract_f0(audio:AudioObject, 
-               fmin=70, 
-               fmax=625)->dict:
+               fmin=librosa.note_to_hz('C2'), 
+               fmax=librosa.note_to_hz('C7'))->dict:
     f0, voiced_flag, voiced_probs = librosa.pyin(audio.y, 
                                                 fmin=fmin, 
                                                 fmax=fmax)

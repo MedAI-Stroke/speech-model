@@ -7,16 +7,26 @@ from .object import AudioObject
 
 
 def get_statistics(array):
-     return {
-        'max':np.max(array),
-        'min':np.min(array),
-        'mean':np.mean(array),
-        'median':np.median(array),
-        'std':np.std(array),
-        'q_25':np.percentile(array, 25),
-        'q_75':np.percentile(array, 75),
-    }
-
+    if array.size > 0 :
+         return {
+            'max':np.max(array),
+            'min':np.min(array),
+            'mean':np.mean(array),
+            'median':np.median(array),
+            'std':np.std(array),
+            'q_25':np.percentile(array, 25),
+            'q_75':np.percentile(array, 75),
+        }
+    else:
+         return {
+            'max':None,
+            'min':None,
+            'mean':None,
+            'median':None,
+            'std':None,
+            'q_25':None,
+            'q_75':None,
+        }
 
 
 def extract_energy(audio:AudioObject) -> np.float32:

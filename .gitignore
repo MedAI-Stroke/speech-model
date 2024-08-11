@@ -1,1 +1,4 @@
 dataset/
+k_wav2vec2/
+__pycache__
+output/

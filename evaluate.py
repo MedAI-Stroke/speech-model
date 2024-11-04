@@ -127,7 +127,7 @@ def main():
     DATA_DIR = os.path.join(REPOSITORY, 'data')
     RESULTS_DIR = os.path.join(REPOSITORY, 'results')
     H5_PATH = os.path.join(DATA_DIR, 'mfcc_features.h5')
-    MODEL_PATH = os.path.join(RESULTS_DIR, 'best_model.h5')
+    MODEL_PATH = os.path.join(RESULTS_DIR, 'best_model.keras')
     
     # 결과 저장 디렉토리 생성
     os.makedirs(RESULTS_DIR, exist_ok=True)

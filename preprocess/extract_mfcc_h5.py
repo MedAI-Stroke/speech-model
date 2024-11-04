@@ -69,10 +69,10 @@ def extract_mfcc(audio_info):
         else:
             audio = audio[:target_length]
 
-        # 6. MFCC 추출
+        # 7. MFCC 추출
         mfcc = librosa.feature.mfcc(y=audio, sr=16000, n_mfcc=13, hop_length= 512)
 
-        # 7. MFCC 정규화
+        # 8. MFCC 정규화
         mfcc = (mfcc - np.mean(mfcc, axis=1, keepdims=True)) / \
                (np.std(mfcc, axis=1, keepdims=True) + 1e-8)
 

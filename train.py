@@ -405,7 +405,7 @@ def main(model_type):
     
     # 콜백 설정
     callbacks = [
-        AUROCCallback(valid_generator, os.path.join(SAVE_DIR, 'best_model.h5')),
+        AUROCCallback(valid_generator, os.path.join(SAVE_DIR, 'best_model.keras')),
         tf.keras.callbacks.ReduceLROnPlateau(
             monitor='val_loss',
             factor=0.5,

@@ -1,0 +1,21 @@
+
+Evaluation Metrics:
+--------------------------------------------------
+
+Train Set:
+Precision: 0.9584
+Recall: 0.9575
+Accuracy: 0.9921
+AUC: 0.9992
+
+Valid Set:
+Precision: 0.8149
+Recall: 0.8172
+Accuracy: 0.9878
+AUC: 0.9917
+
+Test Set:
+Precision: 0.9170
+Recall: 0.6186
+Accuracy: 0.9595
+AUC: 0.9497
